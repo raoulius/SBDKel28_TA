@@ -1,0 +1,19 @@
+CREATE TABLE `teams` (
+    `id_team` INT AUTO_INCREMENT PRIMARY KEY,
+    `nama_team` VARCHAR(255) NOT NULL,
+    `tahun_dibentuk` INT NOT NULL,
+    `is_deleted` ENUM('0', '1') DEFAULT '0',
+    `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    `updated_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+
+CREATE TABLE `players` (
+    `id_player` INT AUTO_INCREMENT PRIMARY KEY,
+    `nickname` VARCHAR(255) NOT NULL,
+    `roles` VARCHAR(255) NOT NULL,
+    `id_divisi` INT NOT NULL,
+    `id_team` INT NOT NULL,
+    `is_deleted` ENUM('0', '1') DEFAULT '0',
+    `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    `updated_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
